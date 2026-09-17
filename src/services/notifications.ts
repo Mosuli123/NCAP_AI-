@@ -9,12 +9,12 @@ import { Platform } from 'react-native';
  */
 
 Notifications.setNotificationHandler({
+  // Fields match expo-notifications ~0.28 (Expo SDK 51). Newer SDKs also accept
+  // shouldShowBanner/shouldShowList; they are omitted here to stay type-safe on 51.
   handleNotification: async () => ({
     shouldShowAlert: true,
     shouldPlaySound: false,
     shouldSetBadge: false,
-    shouldShowBanner: true,
-    shouldShowList: true,
   }),
 });
 

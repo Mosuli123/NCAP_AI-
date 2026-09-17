@@ -43,7 +43,7 @@
       ]
     ],
     "experiments": {
-      "typedRoutes": true
+      "typedRoutes": false
     },
     "extra": {
       "ncapApiBaseUrl": "https://ncap.careerhelp.org.za/api"
