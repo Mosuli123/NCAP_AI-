@@ -9,6 +9,7 @@ const NS = '@khetha_ncap';
 export const StorageKeys = {
   profile: `${NS}/profile`,
   onboardingDone: `${NS}/onboarding_done`,
+  guestMode: `${NS}/guest_mode`,
   cachedCareers: `${NS}/cache/careers`,
   cachedQualifications: `${NS}/cache/qualifications`,
   cachedProviders: `${NS}/cache/providers`,

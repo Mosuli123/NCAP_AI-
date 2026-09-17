@@ -2,19 +2,30 @@ import { Redirect } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 
 import { LoadingState, Screen } from '@/components/ui';
+import { isSignedIn } from '@/services/auth';
 import { StorageKeys, getItem } from '@/services/storage';
 
+type Decision = 'onboarding' | 'login' | 'tabs';
+
 /**
- * Entry route. Sends first-time users through onboarding, and returning users
- * straight to the home tabs. Onboarding completion is stored on-device.
+ * Entry route. Decides the first screen:
+ *  - not onboarded          -> onboarding
+ *  - onboarded, not signed  -> login (demo sign-in / guest)
+ *  - onboarded and signed   -> home tabs
  */
 export default function Index() {
-  const [decision, setDecision] = useState<'onboarding' | 'tabs' | null>(null);
+  const [decision, setDecision] = useState<Decision | null>(null);
 
   useEffect(() => {
     (async () => {
-      const done = await getItem<boolean>(StorageKeys.onboardingDone);
-      setDecision(done ? 'tabs' : 'onboarding');
+      const onboarded = await getItem<boolean>(StorageKeys.onboardingDone);
+      if (!onboarded) {
+        setDecision('onboarding');
+        return;
+      }
+      const signed = await isSignedIn();
+      const guest = await getItem<boolean>(StorageKeys.guestMode);
+      setDecision(signed || guest ? 'tabs' : 'login');
     })();
   }, []);
 
@@ -26,5 +37,7 @@ export default function Index() {
     );
   }
 
-  return decision === 'tabs' ? <Redirect href="/(tabs)/home" /> : <Redirect href="/onboarding" />;
+  if (decision === 'tabs') return <Redirect href="/(tabs)/home" />;
+  if (decision === 'login') return <Redirect href="/login" />;
+  return <Redirect href="/onboarding" />;
 }

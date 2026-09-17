@@ -135,6 +135,19 @@
     "deleteData": "Delete my data",
     "deleteConfirm": "This permanently removes your profile, results and favourites from this device. Continue?",
     "about": "About",
-    "aboutBody": "Khetha NCAP brings the Department of Higher Education and Training's National Career Advice Portal to mobile."
+    "aboutBody": "Khetha NCAP brings the Department of Higher Education and Training's National Career Advice Portal to mobile.",
+    "account": "Account",
+    "signOut": "Sign out",
+    "signOutConfirm": "You will be returned to the sign-in screen. Your saved data stays on this device."
+  },
+  "login": {
+    "title": "Sign in to continue",
+    "email": "Email address",
+    "password": "Password",
+    "signIn": "Sign in",
+    "guest": "Continue as guest",
+    "invalid": "Incorrect email or password. Try the demo account below.",
+    "demoTitle": "Demo account for testing",
+    "useDemo": "Use demo account"
   }
 }

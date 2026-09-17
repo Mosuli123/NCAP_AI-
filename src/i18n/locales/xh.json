@@ -135,6 +135,19 @@
     "deleteData": "Cima idatha yam",
     "deleteConfirm": "Oku kususa ngokusisigxina iprofayile yakho, iziphumo nezinto ozithandayo kwesi sixhobo. Uyaqhubeka?",
     "about": "Malunga",
-    "aboutBody": "IKhetha NCAP izisa i-National Career Advice Portal yeSebe leMfundo ePhakamileyo noQeqesho kumfonelo."
+    "aboutBody": "IKhetha NCAP izisa i-National Career Advice Portal yeSebe leMfundo ePhakamileyo noQeqesho kumfonelo.",
+    "account": "I-akhawunti",
+    "signOut": "Phuma",
+    "signOutConfirm": "Uya kubuyiselwa kwiskrini sokungena. Idatha yakho egciniweyo ihlala kwesi sixhobo."
+  },
+  "login": {
+    "title": "Ngena ukuze uqhubeke",
+    "email": "Idilesi ye-imeyile",
+    "password": "Igama lokugqitha",
+    "signIn": "Ngena",
+    "guest": "Qhubeka njengendwendwe",
+    "invalid": "I-imeyile okanye igama lokugqitha alichanekanga. Zama i-akhawunti yedemo engezantsi.",
+    "demoTitle": "I-akhawunti yedemo yovavanyo",
+    "useDemo": "Sebenzisa i-akhawunti yedemo"
   }
 }

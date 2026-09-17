@@ -135,6 +135,19 @@
     "deleteData": "Susa idatha yami",
     "deleteConfirm": "Lokhu kususa unomphela iphrofayela yakho, imiphumela nokuthandayo kule divayisi. Uqhubeka?",
     "about": "Mayelana",
-    "aboutBody": "I-Khetha NCAP iletha i-National Career Advice Portal yoMnyango Wezemfundo Ephakeme Nokuqeqeshwa kumakhalekhukhwini."
+    "aboutBody": "I-Khetha NCAP iletha i-National Career Advice Portal yoMnyango Wezemfundo Ephakeme Nokuqeqeshwa kumakhalekhukhwini.",
+    "account": "I-akhawunti",
+    "signOut": "Phuma",
+    "signOutConfirm": "Uzobuyiselwa esikrinini sokungena. Idatha yakho egciniwe ihlala kule divayisi."
+  },
+  "login": {
+    "title": "Ngena ukuze uqhubeke",
+    "email": "Ikheli le-imeyili",
+    "password": "Iphasiwedi",
+    "signIn": "Ngena",
+    "guest": "Qhubeka njengesivakashi",
+    "invalid": "I-imeyili noma iphasiwedi ayilungile. Zama i-akhawunti yedemo engezansi.",
+    "demoTitle": "I-akhawunti yedemo yokuhlola",
+    "useDemo": "Sebenzisa i-akhawunti yedemo"
   }
 }

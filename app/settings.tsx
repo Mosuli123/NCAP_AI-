@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Button, Card, Chip, SectionTitle } from '@/components/ui';
 import { SUPPORTED_LANGUAGES, changeLanguage } from '@/i18n';
+import { signOut } from '@/services/auth';
 import { cancelAllReminders, requestNotificationPermission, scheduleJourneyReminder } from '@/services/notifications';
 import { StorageKeys, removeItem } from '@/services/storage';
 import { useProfile } from '@/store/ProfileContext';
@@ -43,9 +44,25 @@ export default function Settings() {
         style: 'destructive',
         onPress: async () => {
           await resetProfile();
+          await signOut();
           await removeItem(StorageKeys.onboardingDone);
+          await removeItem(StorageKeys.guestMode);
           await cancelAllReminders();
           router.replace('/onboarding');
+        },
+      },
+    ]);
+  };
+
+  const confirmSignOut = () => {
+    Alert.alert(t('settings.signOut'), t('settings.signOutConfirm'), [
+      { text: t('common.back'), style: 'cancel' },
+      {
+        text: t('settings.signOut'),
+        onPress: async () => {
+          await signOut();
+          await removeItem(StorageKeys.guestMode);
+          router.replace('/login');
         },
       },
     ]);
@@ -77,6 +94,15 @@ export default function Settings() {
         <Text style={styles.privacyBody}>{t('onboarding.consentBody')}</Text>
         <View style={{ height: spacing.md }} />
         <Button title={t('settings.deleteData')} variant="outline" onPress={confirmDelete} />
+      </Card>
+
+      <SectionTitle>{t('settings.account')}</SectionTitle>
+      <Card style={styles.privacyCard}>
+        <Text style={styles.rowLabel}>
+          {profile.displayName ? `${t('home.greeting')}, ${profile.displayName}` : t('home.greetingGuest')}
+        </Text>
+        <View style={{ height: spacing.md }} />
+        <Button title={t('settings.signOut')} variant="outline" onPress={confirmSignOut} />
       </Card>
 
       <SectionTitle>{t('settings.about')}</SectionTitle>

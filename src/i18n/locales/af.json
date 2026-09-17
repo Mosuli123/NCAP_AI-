@@ -135,6 +135,19 @@
     "deleteData": "Verwyder my data",
     "deleteConfirm": "Dit verwyder jou profiel, resultate en gunstelinge permanent van hierdie toestel. Gaan voort?",
     "about": "Oor",
-    "aboutBody": "Khetha NCAP bring die Departement van Hoër Onderwys en Opleiding se Nasionale Loopbaanadviesportaal na mobiel."
+    "aboutBody": "Khetha NCAP bring die Departement van Hoër Onderwys en Opleiding se Nasionale Loopbaanadviesportaal na mobiel.",
+    "account": "Rekening",
+    "signOut": "Meld af",
+    "signOutConfirm": "Jy sal na die aanmeldskerm teruggeneem word. Jou gestoorde data bly op hierdie toestel."
+  },
+  "login": {
+    "title": "Meld aan om voort te gaan",
+    "email": "E-posadres",
+    "password": "Wagwoord",
+    "signIn": "Meld aan",
+    "guest": "Gaan voort as gas",
+    "invalid": "Verkeerde e-pos of wagwoord. Probeer die demo-rekening hieronder.",
+    "demoTitle": "Demo-rekening vir toetsing",
+    "useDemo": "Gebruik demo-rekening"
   }
 }

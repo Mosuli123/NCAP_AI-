@@ -74,6 +74,22 @@ npm run web       # Web preview
 
 Scan the QR code with **Expo Go** on a physical phone for the fastest preview.
 
+### 🔑 Demo login credentials
+
+The app opens with a demo sign-in screen (after onboarding). Use these test
+credentials, tap **"Use demo account"** to auto-fill them, or tap **"Continue
+as guest"** to skip sign-in entirely — all features work either way.
+
+| Email | Password |
+| --- | --- |
+| `learner@khetha.co.za` | `khetha123` |
+| `demo@ncap.gov.za` | `demo123` |
+
+> These are local dummy accounts with no privileges (defined in
+> `src/services/auth.ts` → `DEMO_CREDENTIALS`). They exist only to exercise the
+> sign-in flow before a real DHET/Khetha identity provider is connected. No
+> credentials leave the device. Sign out any time from **Settings → Account**.
+
 ### Quality checks
 
 ```bash
