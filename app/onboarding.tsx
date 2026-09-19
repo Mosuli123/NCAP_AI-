@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, Chip, SectionTitle } from '@/components/ui';
 import { SUPPORTED_LANGUAGES, changeLanguage } from '@/i18n';
 import { requestNotificationPermission, scheduleJourneyReminder } from '@/services/notifications';
+import { StorageKeys, setItem } from '@/services/storage';
 import { useProfile } from '@/store/ProfileContext';
 import { colors, radius, spacing, typography } from '@/theme';
 import type { Province, SupportedLanguage } from '@/types';
@@ -53,6 +54,7 @@ export default function Onboarding() {
     });
     setConsent({ dataProcessing: dataConsent, notifications: notifConsent, analytics: analyticsConsent });
     completeMilestone('onboarded');
+    await setItem(StorageKeys.onboardingDone, true);
 
     if (notifConsent) {
       const granted = await requestNotificationPermission();
@@ -67,6 +69,7 @@ export default function Onboarding() {
 
   const skip = async () => {
     completeMilestone('onboarded');
+    await setItem(StorageKeys.onboardingDone, true);
     router.replace('/login');
   };
 

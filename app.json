@@ -1,5 +1,7 @@
 {
   "expo": {
+    "sdkVersion": "52.0.0",
+    "newArchEnabled": true,
     "name": "Khetha NCAP",
     "slug": "khetha-ncap",
     "version": "1.0.0",
